@@ -1,7 +1,5 @@
 ## Step 1: Extract facts from the scenario
 
-One row per fact, grouped by the scenario's own sections. Copy or paraphrase what it says, then what it tells you.
-
 | Scenario section | Evidence (what the scenario says) | What it tells us |
 | --- | --- | --- |
 | Organisation and current service | [E] Reservations, suitability notes, inspections, collections and returns for equipment are managed through spreadsheets and paper forms | [E] Information spread across several from of records |
