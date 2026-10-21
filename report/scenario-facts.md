@@ -23,15 +23,15 @@
 | | [Q] The scenario does not confirm when provisional group reservations become firm. | [Q] Stakeholders need to decide when provisional reservations should be confirmed or released. |
 | | [Q] The scenario does not confirm how spare sizes should be held and released. | [Q] Stakeholders need to define how long spare sizes can be held and when they should become available to other users. |
 | | [Q] The scenario does not confirm which equipment and components require individual tracking. | [Q] Stakeholders need to identify which items and components require unique records and which can be tracked by size and quantity. |
-| Collection, changes and return | [E] At collection, staff confirm the responsible person, equipment, sizes, condition and instructions. | |
-| | [E] Substitutions may be needed if a size is unsuitable or an item fails its final check. | |
-| | [E] Weather or activity changes may cause postponement, extension or a request for different equipment. | |
-| | [E] Weather or activity changes may cause postponement, extension or a request for different equipment. | |
-| | [E] An extension can conflict with another reservation. | |
-| | [E] On return, staff record completeness, condition, cleanliness and reported problems. | |
-| | [E] Wet equipment may require drying and later inspection before it is available. | |
-| | [Q] The scenario does not confirm who may approve substitutions or extensions. | |
-| | [Q] The scenario does not confirm which checks are required after wet, damaged or incomplete returns. | |
+| Collection, changes and return |  | |
+| |  | |
+| || |
+| || |
+| || |
+| || |
+| || |
+| || |
+| || |
 | Damage, restrictions and information | | |
 | Stakeholder evidence (quotes) | [E] Coordinator: “In the store is not the same as ready, dry and complete.” | [E] Equipment being physically present does not mean it is ready to be issued. |
 | | [E] Instructor: “Suitability depends on the activity and conditions, not only the participant’s size.” | [E] Equipment suitability must consider activity requirements and conditions as well as participant sizes. |
