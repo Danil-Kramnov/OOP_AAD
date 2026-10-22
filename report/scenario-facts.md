@@ -77,3 +77,45 @@ Tags: [E] stated in the scenario · [Q] not confirmed, needs a stakeholder answe
 ## 1.4 Problem statement
 Kerry Outdoor Equipment Centre lends outdoor equipment to individuals, clubs, schools and programme instructors. Reservations, suitability notes, inspections, collections and returns are recorded in spreadsheets and on paper forms. Because this information is scattered, staff cannot easily tell whether equipment is truly ready: an item may be in the store but still wet, waiting for inspection, restricted or missing a component. Eligibility checks for training, supervision or an approved instructor are not applied in the same way for all users. Groups often reserve before final sizes are known, and spare sizes may be held for too long, reducing availability for others. Extensions and postponements can clash with other reservations, and safety restrictions on an item, model or supplier batch are hard to trace to future bookings. The coordinator has no single view of provisional requests, shortages, overdue returns and inspections. As a result, staff spend extra time checking and correcting the flaws of the current established flow.
 
+
+## Stakeholder means anyone affected by the system.
+
+## Actor means a role that directly uses it.
+
+
+
+# Stakeholders and Actors
+
+| ID | Stakeholder | Type | Goal | Concern | Influence | Actor? |
+| --- | --- | --- | --- | --- | --- | --- |
+| SH01 | individual user | Direct | Get suitable equipment | Change instead of cancel | Medium | Primary (Borrower) |
+| SH02 | Group organiser | Direct | Reserve before final numbers | Enough sizes | Medium | Primary (Borrower) |
+| SH03 | Instructor | Direct | Equipment suits activity | Participant safety | High | Primary (Borrower) |
+| SH04 | Coordinator | Direct | Overview of service state | "In store" ≠ ready | High | Primary |
+| SH05 | Stores worker | Direct | Issue/receive complete kits | Missing components | Medium | Primary |
+| SH06 | Safety officer | Direct | Restrict item, model or batch | Restricted items issued | High | Primary |
+| SH07 | Participants | Indirect | Safe, fitting equipment | Fit and safety | Low |  |
+| SH08 | Suppliers | External | Safety notices acted on | Batch faults | Low |  |
+
+Borrower covers 3 groups of stakeholders (Basicaly everyone, who borrows equipment: individual user, instructor and group organiser)
+
+
+## Actor–goal table
+
+| Actor | Goal | UC |
+| --- | --- | --- |
+| Borrower | Request equipment | UC01 |
+| Borrower, Coordinator | Check availability | UC02 |
+| Coordinator | Confirm or release provisional reservation | UC03 |
+| Borrower, Coordinator | Change reservation | UC04 |
+| Stores worker | Issue equipment at collection | UC05 |
+| Stores worker | Record return | UC06 |
+| Stores worker | Record inspection result | UC07 |
+| Stores worker | Report damage or loss | UC08 |
+| Safety officer | Restrict equipment | UC09 |
+| Coordinator | Review service overview | UC10 |
+
+
+## Bussiness Rule (BR) comes from Evidences extracted from the scenario.
+
+## An Assumption is my temporary guess, and each one is linked to a question.
