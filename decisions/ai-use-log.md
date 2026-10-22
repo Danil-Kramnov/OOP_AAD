@@ -1,3 +1,2 @@
-## Generate analysis worksheet to do handwriting-thinking process through the scenario
-
-## Convert word text to markdown.
+1. Generate analysis worksheet to do handwriting-thinking process through the scenario
+2. Convert word text to markdown.
