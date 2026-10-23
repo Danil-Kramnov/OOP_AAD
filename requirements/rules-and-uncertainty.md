@@ -33,3 +33,7 @@
 | <a name="q03"></a>Q03 | Who approves substitutions and extensions? |
 | <a name="q04"></a>Q04 | Which checks follow wet or damaged returns? |
 | <a name="q05"></a>Q05 | Should a restriction cancel or only flag existing reservations? |
+
+
+---
+[← Stakeholders](../report/03-stakeholders-actors.md) · [Home](../README.md) · [Next: Requirements →](requirements.md)

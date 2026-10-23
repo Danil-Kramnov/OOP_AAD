@@ -11,3 +11,6 @@
 | Coordinator overview | ? |
 
 safety notices and weather information come from outside the system and staff record their effects [A]
+
+---
+[← Scenario](01-scenario-interpretation.md) · [Home](../README.md) · [Next: Stakeholders →](03-stakeholders-actors.md)

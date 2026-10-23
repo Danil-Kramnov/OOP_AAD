@@ -78,3 +78,6 @@ Tags explained:
 
 ## 1.4 Problem statement
 Kerry Outdoor Equipment Centre lends outdoor equipment to individuals, clubs, schools and programme instructors. Reservations, suitability notes, inspections, collections and returns are recorded in spreadsheets and on paper forms. Because this information is scattered, staff cannot easily tell whether equipment is truly ready: an item may be in the store but still wet, waiting for inspection, restricted or missing a component. Eligibility checks for training, supervision or an approved instructor are not applied in the same way for all users. Groups often reserve before final sizes are known, and spare sizes may be held for too long, reducing availability for others. Extensions and postponements can clash with other reservations, and safety restrictions on an item, model or supplier batch are hard to trace to future bookings. The coordinator has no single view of provisional requests, shortages, overdue returns and inspections. As a result, staff spend extra time checking and correcting the flaws of the current established flow.
+
+---
+[Home](../README.md) · [Next: Purpose and scope →](02-purpose-scope.md)

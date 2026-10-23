@@ -11,7 +11,7 @@
   -- Should have = important, but there's a workaround 
   -- Could have = nice to have.
   -- Won't have = not in the scope
-  
+
 ## Functional requirements
 | ID | Requirement | Source | MoSCoW | Verification |
 | --- | --- | --- | --- | --- |
@@ -40,6 +40,8 @@
  - Test: could be done via unit testing (certain inputs tested against expected outcome)
  - Demo: just a visual demonstration of the properly working feature
 
+---
+[← Rules](rules-and-uncertainty.md) · [Home](../README.md) · [Next: Use cases →](../report/04-use-cases.md)
 
 
   

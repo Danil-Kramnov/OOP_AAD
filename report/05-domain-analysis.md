@@ -25,3 +25,6 @@
 ![Domain model](../diagrams/domain-model.png)
 
 Restriction links to an item, a model **or** a batch; only one is used each time (BR04).
+
+---
+[← Use cases](04-use-cases.md) · [Home](../README.md) · [Glossary](glossary.md) · [Next: Traceability →](06-traceability.md)
