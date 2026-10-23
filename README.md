@@ -2,7 +2,17 @@ Guide for the project structure:
 
 /decisions - contains ai-use-log where stated how and what for I used AI tools
 
-/report - contains reports (as a .docx and .md)
+/report - contains reports (broken down to .md files)
+
+/references - contains all inputs (scenario + brief) + declaration + worksheet template
+
+/diagrams - contains .puml code and .png of diagrams
+
+/features - contains cucumber/gherkin examples/scenarios
+
+/requirements - contains rules and requirements for the System
+
+
 
 
 ## Contents

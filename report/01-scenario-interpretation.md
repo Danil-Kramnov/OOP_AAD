@@ -1,6 +1,7 @@
 # 1. Scenario Interpretation
 
 - Overal structure of this report follows Exercise Lab3 from the Canvas.
+- Note to my futureself - shouldn't be spending too much time for this serction (at least for CA purposes, otherwise in production it would probably worth it. Will see on real produciton)
 
 ## 1.1 Evidence extracted from the scenario
 Tags explained: 
