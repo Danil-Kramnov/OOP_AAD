@@ -1,0 +1,68 @@
+@startuml domain-model
+hide methods
+hide circle
+skinparam classAttributeIconSize 0
+left to right direction
+
+class Borrower {
+  name
+  borrowerType
+}
+class Reservation {
+  activity
+  startDate
+  endDate
+  status
+}
+class EquipmentModel {
+  name
+  category
+  requiresEligibility
+}
+class EquipmentItem {
+  itemCode
+  size
+  readinessStatus
+}
+class Kit {
+  kitCode
+}
+class Batch {
+  batchCode
+  supplierName
+}
+class Restriction {
+  reason
+  startDate
+}
+class EligibilityEvidence {
+  evidenceType
+}
+class Collection {
+  date
+  responsiblePerson
+  instructions
+}
+class Return {
+  date
+  complete
+  condition
+}
+class Inspection {
+  date
+  result
+}
+
+Borrower "1" -- "0..*" Reservation : makes >
+Reservation "0..*" -- "1..*" EquipmentItem : reserves >
+Reservation "1" -- "0..*" EligibilityEvidence : is supported by >
+EquipmentModel "1" -- "0..*" EquipmentItem : describes >
+Kit "0..1" -- "1..*" EquipmentItem : contains >
+Batch "0..1" -- "0..*" EquipmentItem : supplied >
+Restriction "0..*" -- "0..1" EquipmentItem : applies to >
+Restriction "0..*" -- "0..1" EquipmentModel : applies to >
+Restriction "0..*" -- "0..1" Batch : applies to >
+Collection "0..1" -- "1" Reservation : fulfils >
+Return "0..*" -- "1" Reservation : closes >
+Inspection "0..*" -- "1" EquipmentItem : examines >
+@enduml

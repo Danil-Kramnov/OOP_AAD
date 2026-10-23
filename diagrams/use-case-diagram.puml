@@ -1,0 +1,40 @@
+@startuml use-case-model
+left to right direction
+skinparam packageStyle rectangle
+
+actor Borrower
+actor "Individual user" as IU
+actor "Group organiser" as GO
+actor Instructor as IN
+IU --|> Borrower
+GO --|> Borrower
+IN --|> Borrower
+actor Coordinator
+actor "Stores worker" as SW
+actor "Safety officer" as SO
+
+rectangle "Equipment Reservation and Readiness System" {
+  usecase "UC01 Request Equipment" as UC01
+  usecase "UC02 Check Availability" as UC02
+  usecase "UC03 Confirm or Release\nReservation" as UC03
+  usecase "UC04 Change Reservation" as UC04
+  usecase "UC05 Issue Equipment" as UC05
+  usecase "Check Eligibility" as CE
+  usecase "UC06 Record Return" as UC06
+  usecase "UC07 Record Inspection" as UC07
+  usecase "UC09 Restrict Equipment" as UC09
+  usecase "UC10 Review Overview" as UC10
+}
+
+Borrower --> UC01
+Borrower --> UC02
+Borrower --> UC04
+Coordinator --> UC03
+Coordinator --> UC04
+Coordinator --> UC10
+SW --> UC05
+SW --> UC06
+SW --> UC07
+SO --> UC09
+UC05 ..> CE : <<include>>
+@enduml
