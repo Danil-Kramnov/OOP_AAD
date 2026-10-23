@@ -1,9 +1,11 @@
 # 1. Scenario Interpretation
 
-Overal structure of this report follows Exercise Lab3 from the Canvas.
+- Overal structure of this report follows Exercise Lab3 from the Canvas.
 
 ## 1.1 Evidence extracted from the scenario
-Tags: [E] stated in the scenario · [Q] not confirmed, needs a stakeholder answer. The right-hand column is my interpretation.
+Tags explained: 
+ - [E] evidence stated in the scenario 
+ - [Q] question, something is not confirmed, needs a stakeholder answer. The right-hand column is my interpretation.
 
 | Scenario section | Evidence (what the scenario says) | What it tells us |
 | --- | --- | --- |
@@ -78,9 +80,11 @@ Tags: [E] stated in the scenario · [Q] not confirmed, needs a stakeholder answe
 Kerry Outdoor Equipment Centre lends outdoor equipment to individuals, clubs, schools and programme instructors. Reservations, suitability notes, inspections, collections and returns are recorded in spreadsheets and on paper forms. Because this information is scattered, staff cannot easily tell whether equipment is truly ready: an item may be in the store but still wet, waiting for inspection, restricted or missing a component. Eligibility checks for training, supervision or an approved instructor are not applied in the same way for all users. Groups often reserve before final sizes are known, and spare sizes may be held for too long, reducing availability for others. Extensions and postponements can clash with other reservations, and safety restrictions on an item, model or supplier batch are hard to trace to future bookings. The coordinator has no single view of provisional requests, shortages, overdue returns and inspections. As a result, staff spend extra time checking and correcting the flaws of the current established flow.
 
 
-## Stakeholder means anyone affected by the system.
+Section about actors
 
-## Actor means a role that directly uses it.
+ - Stakeholder means anyone affected by the system.
+
+ - Actor means a role that directly uses it.
 
 
 
@@ -111,11 +115,149 @@ Borrower covers 3 groups of stakeholders (Basicaly everyone, who borrows equipme
 | Stores worker | Issue equipment at collection | UC05 |
 | Stores worker | Record return | UC06 |
 | Stores worker | Record inspection result | UC07 |
-| Stores worker | Report damage or loss | UC08 |
 | Safety officer | Restrict equipment | UC09 |
 | Coordinator | Review service overview | UC10 |
 
 
-## Bussiness Rule (BR) comes from Evidences extracted from the scenario.
+1. Bussiness Rule (BR) comes from Evidences extracted from the scenario.
 
-## An Assumption is my temporary guess, and each one is linked to a question.
+2. An Assumption is my temporary guess, and each one is linked to a question.
+
+
+
+
+
+# 2. Purpose and Scope
+
+**Purpose:** The Equipment Reservation System helps the centre reserve, issue, change, return and restrict equipment
+
+| In scope | Out of scope |
+| --- | --- |
+| Reservations (provisional and confirmed) | Retail sales [E] |
+| Availability, kit completeness, eligibility checks | Weather forecasting [E] |
+| Collection, changes, returns, inspections | Activity instruction [E] |
+| Damage reports and restrictions | Payments and fees [A] |
+| Coordinator overview | ? |
+
+safety notices and weather information come from outside the system and staff record their effects [A]
+
+
+
+## Business rules
+| ID | Rule |
+| --- | --- |
+| BR01 | A kit is ready only when complete, dry and inspected. [E] |
+| BR02 | Drying, under-inspection or restricted equipment cannot be issued. [E] |
+| BR03 | Equipment needing training or an approved instructor needs that evidence before issue. [E] |
+| BR04 | A restriction can apply to an item, a model or a supplier batch. [E] |
+
+## Assumptions
+| ID | Assumption |
+| --- | --- |
+| AS01 | Provisional reservations are reviewed by the coordinator, then confirmed or released. (Q02) |
+| AS02 | A restriction flags affected reservations; it does not cancel them. (Q05) |
+| AS03 | Wet returns go to drying, then inspection. (Q04) |
+
+## Constraints and risks
+- CO01: Retail sales, weather forecasting and activity instruction are out of scope. [E]
+- RK01: Old spreadsheet records may be duplicated or out of date.
+- RK02: Older items may have no batch information, so batch restrictions could miss them.
+
+## Questions
+| ID | Question |
+| --- | --- |
+| Q01 | Which equipment needs training, supervision or an instructor? |
+| Q02 | When does a provisional reservation become firm? |
+| Q03 | Who approves substitutions and extensions? |
+| Q04 | Which checks follow wet or damaged returns? |
+| Q05 | Should a restriction cancel or only flag existing reservations? |
+
+MoSCoW principles in action:
+
+ - According to MoSCoW principles (Must,Should,Could,Won't)
+
+ - Functional Requirements = FR is something WHAT system does. Stated as "System Must/Should have..."
+ - Non-functional Requirements = NFR is HOW the system does it, and it must contain a measurable number.
+ - MoSCoW priorities: 
+  -- Must have = The System doesn't work without it; 
+  -- Should have = important, but there's a workaround 
+  -- Could have = nice to have.
+  -- Won't have = not in the scope
+
+  # Requirements
+
+
+
+## Functional requirements
+| ID | Requirement | Source | MoSCoW | Verification |
+| --- | --- | --- | --- | --- |
+| FR01 | The system shall record a reservation with borrower, activity, dates and sizes. | P04, SH02 | Must | Demo |
+| FR02 | The system shall mark each reservation as provisional or confirmed. | P04, AS01 | Should | Demo |
+| FR03 | The system shall show equipment as available only if it is not reserved, drying, under inspection or restricted. | P01, BR02 | Must | Test |
+| FR04 | The system shall show a kit as incomplete when a component is missing. | P02, BR01 | Must | Test |
+| FR05 | The system shall block issue of equipment needing eligibility evidence until it is recorded. | P03, BR03 | Must | Test |
+| FR06 | The system shall reject an extension that overlaps another reservation of the same equipment. | P05 | Should | Test |
+| FR07 | The system shall record a return and set wet items to "drying". | P01, AS03 | Must | Demo |
+| FR08 | The system shall record a restriction on an item, model or batch and list affected reservations. | P06, BR04 | Must | Test |
+| FR09 | The system shall show the coordinator counts of provisional, overdue, drying and restricted items. | P07, SH04 | Could | Demo |
+
+**Won't (out of scope):** payments, weather alerts
+
+## Non-functional requirements
+| ID | Quality | Requirement |
+| --- | --- | --- |
+| NFR01 | Performance | An availability check returns within 3 seconds for 95% of requests. |
+| NFR02 | Security | Only the safety officer role can add or remove restrictions. |
+| NFR03 | Audit | Every equipment status change records who, when and why. |
+| NFR04 | Usability | A trained stores worker records a kit return in under 2 minutes. |
+
+Ways to verify requirement:
+
+ - Test: could be done via unit testing (certain inputs tested against expected outcome)
+ - Demo: just a visual demonstration of the properly working feature
+
+# Use-Case Diagram
+- Code for Use Case Diagram (generated by this tool: https://plantuml.com/):
+@startuml use-case-model
+left to right direction
+skinparam packageStyle rectangle
+
+actor Borrower
+actor "Individual user" as IU
+actor "Group organiser" as GO
+actor Instructor as IN
+IU --|> Borrower
+GO --|> Borrower
+IN --|> Borrower
+actor Coordinator
+actor "Stores worker" as SW
+actor "Safety officer" as SO
+
+rectangle "Equipment Reservation and Readiness System" {
+  usecase "UC01 Request Equipment" as UC01
+  usecase "UC02 Check Availability" as UC02
+  usecase "UC03 Confirm or Release\nReservation" as UC03
+  usecase "UC04 Change Reservation" as UC04
+  usecase "UC05 Issue Equipment" as UC05
+  usecase "Check Eligibility" as CE
+  usecase "UC06 Record Return" as UC06
+  usecase "UC07 Record Inspection" as UC07
+  usecase "UC09 Restrict Equipment" as UC09
+  usecase "UC10 Review Overview" as UC10
+}
+
+Borrower --> UC01
+Borrower --> UC02
+Borrower --> UC04
+Coordinator --> UC03
+Coordinator --> UC04
+Coordinator --> UC10
+SW --> UC05
+SW --> UC06
+SW --> UC07
+SO --> UC09
+UC05 ..> CE : <<include>>
+@enduml
+
+
+
